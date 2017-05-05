@@ -1,3 +1,3 @@
 # formdesigner
 
-[demo pic](/css/images/demo.png)
+![demo pic](/css/images/demo.png)
