@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+    <form action="" id="test">
+        
+    </form>
+</body>
+</html>
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        var abc = localStorage.getItem('content');
+        $('#test').html(abc);
+    });
+</script>

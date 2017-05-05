@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>审批设计器</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/lib.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/design.js"></script>
+</head>
+<body>
+	<div class="wrap">
+	<div class="design-header">
+		<div class="design-header-index">
+			审批设计器
+		</div>
+		<div class="design-header-toolbar">
+			<span class="toolbar-view">预览</span>|
+			<span class="toolbar-save">保存</span>
+		</div>
+	</div>
+	<div class="design-content">
+		<div class="design-component">
+			<div class="design-component-title">
+				<span><span class="arrow-down"></span>控件</span>
+			</div>
+			<div class="design-commponent-body">
+				<div class="design-component-item" data-title="单行输入框" data-type="textfield">
+					<span>单行输入框</span>
+					<div class="widgeticon textfield"></div>
+				</div>
+				<div class="design-component-item" data-title="多行输入框" data-type="textareafield">
+					<span>多行输入框</span>
+					<div class="widgeticon textareafield"></div>
+				</div>
+				<div class="design-component-item" data-title="数字输入框" data-type="numberfield">
+					<span>数字输入框</span>
+					<div class="widgeticon numberfield"></div>
+				</div>
+				<div class="design-component-item" data-title="单选框" data-type="ddselectfield">
+					<span>单选框</span>
+					<div class="widgeticon ddselectfield"></div>
+				</div>
+				<div class="design-component-item" data-title="日期" data-type="dddatefield">
+					<span>日期</span>
+					<div class="widgeticon dddatefield"></div>
+				</div>
+				<div class="design-component-item" data-title="日期区间" data-type="dddaterangefield">
+					<span>日期区间</span>
+					<div class="widgeticon dddaterangefield"></div>
+				</div>
+				<div class="design-component-item" data-title="图片" data-type="ddphotofield">
+					<span>图片</span>
+					<div class="widgeticon ddphotofield"></div>
+				</div>
+				<div class="design-component-item" data-title="明细" data-type="tablefield">
+					<span>明细</span>
+					<div class="widgeticon tablefield"></div>
+				</div>
+				<div class="design-component-item" data-title="文字说明" data-type="textnote">
+					<span>文字说明</span>
+					<div class="widgeticon textnote"></div>
+				</div>
+			</div>
+		</div>
+		<div class="design-workspace">
+			<div class="design-workspace-delay"></div>
+			<div class="design-workspace-form design-workspace-empty">
+				<form action="" class="design-workspace-code" ></form>
+			</div>
+		</div>
+		<div class="design-setting">
+			<div class="design-setting-header">
+				<ul>
+					<li id="setting-header1">控件设置</li>
+					<li id="setting-header2" class="active">审批设置</li>
+				</ul>
+			</div>
+			<div class="design-setting-body">
+				<div class="design-setting-left"></div>
+				<div class="design-setting-right design-setting-active">
+					<div class="design-setting-view">
+						<div class="design-setting-title">
+							审批名称<span class="design-setting-tip">最多10个字</span>
+						</div>
+						<div class="design-setting-ipt">
+							<input type="text" name="shenpiName" class="ipt title-ipt">
+						</div>
+					</div>
+					<div class="design-setting-view">
+						<div class="design-setting-title">
+							审批说明<span class="design-setting-tip">最多100个字</span>()
+						</div>
+						<div class="design-setting-ipt">
+							<textarea name="shenpiDes" class="description-ipt ipt"></textarea>
+						</div>
+					</div>
+					<div class="design-setting-view">
+						<div class="design-setting-title">
+							图标
+						</div>
+						<div class="design-setting-ipt">
+							<ul>
+								<li class="setting-icon setting-icon-1"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-2"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-3"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-4"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-5"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-6"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-7"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-8"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-9"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-10"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-11"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-12"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-13"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-14"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-15"><span class="icon-active"></span></li>
+								<li class="setting-icon setting-icon-16"><span class="icon-active"></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,732 @@
+@charset "utf-8";
+
+/* 首页 */
+*{
+	font-family: "微软雅黑";
+}
+/*body设置*/
+body{
+	background-image: url(images/bodybg.jpg);
+	background-size: cover;
+	background-position: center top;
+	margin:0px;
+	padding:0px;
+	overflow: hidden;
+}
+html,body,.wrap{
+	height:100%;
+}
+/*头部区域*/
+.design-header{
+	height:40px;
+}
+
+/*头部的左侧标题*/
+.design-header-index{
+	background-color: #332C51;
+	color:white;
+	font-size: 18px;
+	width:170px;
+	text-align: center;
+	margin-left:100px;
+	height:40px;
+	display: inline-block;
+	line-height: 40px;
+}
+/*头部的右侧工具栏*/
+.design-header-toolbar{
+	background-color: #332C51;
+	color:white;
+	font-size: 18px;
+	width:170px;
+	text-align: center;
+	margin-right:100px;
+	height:40px;
+	float: right;
+	line-height: 40px;
+}
+
+.toolbar-view,.toolbar-save{
+	cursor: pointer;
+	padding:5px;
+	text-align: center;
+}
+
+
+
+
+
+
+/*下部的内容区域*/
+.design-content{
+	height:100%;
+
+}
+/*控件区域*/
+.design-component{
+	width:25%;
+	position:absolute;	
+	margin-left:100px;
+	margin-top:80px;
+}
+/*工作区域*/
+.design-workspace{
+	position: absolute;
+	left:50%;
+	margin-left:-225px;
+	float:left;
+	margin-right:3%;
+	min-width:450px;
+	background-image: url(images/design-phone.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+	height:888px;
+}
+/*工作控件的表单区域*/
+.design-workspace-form{
+	max-height:688px;
+	position: absolute;
+	left:25px;
+	right:25px;
+	top:106px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	background-color: #F0EFF4;
+}
+
+/*当工作区域无控件的样式*/
+.design-workspace-empty{
+	background-image:url(images/empty.png);
+	background-repeat: no-repeat;
+	background-position: center 100px;
+	min-height: 300px;
+	height:688px;
+}
+
+/*右侧的设置区域*/
+.design-setting{
+	width:25%;
+	float:right;
+}
+
+
+/*====================左侧的控件区域===========================*/
+.design-component-title{
+	text-align: center;
+	width:100px;
+	height:30px;
+	line-height: 30px;
+	background-color: #332C51;
+	margin-bottom: 20px;
+}
+.design-component-title .arrow-down{
+	
+}
+.design-component-item{
+	/*border:1px dashed white;*/
+	border:1px dashed rgba(255,255,255,0.6);
+	width:150px;
+	height:40px;
+	line-height: 40px;
+	text-align: left;
+	background:rgba(255,255,255,0.1);
+	color:white;
+	float:left;
+	font-size:12px;
+	margin-right:15px;
+	margin-bottom:15px;
+	cursor:move;
+	position:relative;
+}
+.design-component-item>span,.design-component-item-move>span{
+	display:inline-block;
+	padding-left:15px;
+}
+.design-component-item-move{
+	background-color:#332C51;
+	width:150px;
+	height:40px;
+	display:none;
+	line-height: 40px;
+	color:white;
+	cursor:move;
+	position: absolute;
+	text-align: center;
+}
+
+
+/*================布局区域========================手机内==*/
+.design-workspace-code{
+}
+.component-item-cantainer{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.component-item-cantainer[type="table"]>.component-item-view{
+	padding:0px;
+	border:0px;
+	position:relative;
+	border:1px solid #F0EFF4;
+}
+.component-item-view{
+	padding-top:15px;
+	padding-bottom:15px;
+	border-width:1px 1px;
+	border-style: solid;
+	border-color:#c8c8ca transparent;
+	background-color:#fff;
+	position: relative;
+}
+.component-item-view-wp{
+	position: relative;
+}
+
+.component-item-view-textnote{
+	background-color:#F0EFF4;
+	border:1px solid #F0EFF4;
+	color :#858e99;
+	font-size:14px;
+	padding:15px;
+}
+.component-item-view-active{
+	
+}
+.hoverStyle{
+	cursor:move;
+	border:1px dashed #FF5400 !important;
+}
+
+.component-item-focus{
+	border : 1px solid #FF5400 !important;
+}
+
+.component-item-remove{
+	position:absolute;
+	display: none;
+	right:0px;
+	top:0px;
+	width:20px;
+	height:20px;
+	background-color:#FF5400;
+	z-index:0;
+}
+.component-item-remove:hover{
+	cursor:pointer;
+}
+.component-item-remove:before{
+	content : "";
+	height : 12px;
+	width:0px;
+	z-index:9;
+	border-radius: 4px;
+	border:2px solid white;
+	display: inline-block;
+	position: absolute;
+	left:8px;
+	top:2px;
+	transform:translate(0%,0%) rotate(-45deg);
+}
+.component-item-remove:after{
+	content : "";
+	height : 12px;
+	border-radius: 4px;
+	width:0px;
+	border:2px solid white;
+	display: inline-block;
+	position: absolute;
+	left:8px;
+	top:2px;
+	transform:translate(0%,0%) rotate(45deg);
+}
+
+
+
+/*明细table*/
+.component-item-table-head{
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-top:1px solid #F0EFF4;
+	border-left:1px solid #F0EFF4;
+	border-right:1px solid #F0EFF4;
+	color:#858e99;
+	background-color:#F0EFF4;
+	cursor: move;
+}
+.component-item-table-body{
+	min-height:90px;
+	background-color: #ddeff3;
+	position: relative;
+}
+.component-item-table-empty{
+	position: absolute;
+	top:50%;
+	left:50%;
+	white-space: nowrap;
+	-webkit-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	color:#ccc;
+	font-size: 14px;
+}
+.component-item-table-bottom{
+	color:#008cee;
+	text-align: center;
+	padding:10px;
+	background-color: #f7f9ff;
+	font-size:14px;
+	border-bottom:1px solid #ddd;
+	margin:0px;
+}
+
+.component-item-table-body>.component-item-cantainer{
+	margin:0px;
+	border:none;
+	cursor: move;
+}
+.component-item-table-body .component-item-view:first{
+	border:none;
+}
+.component-item-table-body .component-item-view{
+	border-top:1px solid #ddd;
+	border-bottom:1px solid white;
+}
+
+
+
+
+
+/*=========================================================ipt================*/
+.component-item-view-label,.component-item-view-label2{
+	width:5.5em;
+	display:inline-block;
+	margin-left:8px;
+
+}
+.component-item-view-textfield{
+	color: #858e99;
+    font-size: 15px;
+    vertical-align: top;
+    border:0;
+    outline: none;
+}
+.component-item-view-textareafield{
+	color: #858e99;
+    font-size: 15px;
+    vertical-align: top;
+    border:0;
+    outline: none;
+    height : 50px;	
+    display:inline-block;
+}
+.component-item-view-numberfield{
+	color: #858e99;
+    font-size: 15px;
+    vertical-align: top;
+    border:0;
+    outline: none;
+}
+.component-item-view-ddselectfield{
+	color: #858e99;
+    font-size: 15px;
+    vertical-align: top;
+    border:0;
+    outline: none;
+    position: absolute;
+	right : 50px;
+}
+.component-item-view-dddatefield{
+	color: #858e99;
+    font-size: 15px;
+    vertical-align: top;
+    border:0;
+    outline: none;
+    position: absolute;
+	right : 50px;
+}
+.component-item-view-ddphotofield{
+	color: #858e99;
+    font-size: 15px;
+    vertical-align: top;
+    border:0;
+    outline: none;
+    position: absolute;
+	right : 50px;
+}
+.component-item-view-dddaterangefield{
+	color: #858e99;
+    font-size: 15px;
+    vertical-align: top;
+    border:0;
+    outline: none;
+    position: absolute;
+	right : 50px;
+}
+.component-item-view-line{
+	height : 0px;
+	border-width:1px 0px 0px 0px;
+	border-style: solid;
+	border-color:#c8c8ca transparent;
+	margin-top:10px;
+	margin-bottom: 10px;
+
+}
+.component-item-view-photo-icon{
+	background-image: url(images/photo.png);
+	display: inline-block;
+	width:20px;
+	height:20px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	right:20px;
+}
+
+
+
+/*=================================================ipt end==============================*/
+
+/*确定位置线*/
+.component-dragging-mark {
+  background: #ff4500;
+  height: 2px;
+  overflow: visible;
+  position: relative;
+  margin: 3px 0;
+}
+.component-dragging-mark:before,
+.component-dragging-mark:after {
+  position: absolute;
+  content: '';
+  display: block;
+  height: 0;
+  width: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 4px 8px;
+  top: -3px;
+}
+.component-dragging-mark:before {
+  left: 0px;
+  border-left-color: #ff4500;
+}
+.component-dragging-mark:after {
+  right: 0px;
+  border-right-color: #ff4500;
+}
+
+
+/** 控件图标**/
+.design-component-item .widgeticon {
+    position: absolute;
+    right: 5px;
+    top: 9px;
+}
+.widgeticon {
+    background: url("images/component-icon.png") no-repeat;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+}
+.widgeticon.textfield {
+    background-position: 0 -24px;
+}
+.widgeticon.textareafield {
+    background-position: 0 0;
+}
+.widgeticon.numberfield {
+    background-position: 0 -120px;
+}
+.widgeticon.ddselectfield {
+    background-position: 0 -48px;
+}
+.widgeticon.dddatefield {
+    background-position: 0 -72px;
+}
+.widgeticon.dddaterangefield {
+    background-position: 0 -96px;
+}
+.widgeticon.ddphotofield {
+    background-position: 0 -144px;
+}
+.widgeticon.tablefield {
+    background-position: 0 -168px;
+}
+.widgeticon.textnote {
+    background-position: 0 -216px;
+}
+
+
+
+
+
+/*==================向右的箭头=================*/
+.component-item-view-arrow-right{
+	position: absolute;
+	width:10px;
+	display: inline;
+	top:2px;
+	right:40px;
+} 
+
+.component-item-view-arrow-right:before,.component-item-view-arrow-right:after{
+	content: '';
+	display: block;
+	position: absolute;
+	background: #ddd;
+	border-radius:1px;
+	width:2px;
+	height:15px;
+	left:125%;
+	top:25%;
+	-webkit-transition: all .3s ease-in;
+	-moz-transition: all .3s ease-in;
+	-ms-transition: all .3s ease-in;
+	-o-transition: all .3s ease-in;
+	transition: all .3s ease-in;
+}
+
+.component-item-view-arrow-right:before{
+	transform:translate(120%,-30%) rotate(-45deg);
+}
+.component-item-view-arrow-right:after{
+	transform:translate(120%,30%) rotate(45deg);
+}
+
+
+
+/*==============================右侧的设置区域===================*/
+.design-setting-header{
+	margin:0px;
+	padding:0px;
+	margin-left:-60px;
+}
+.design-setting-header>ul{
+	list-style: none;
+	display: inline-block;
+	padding:0px;
+	margin:0px;
+}
+.design-setting-header>ul>li{
+	float:left;
+	width:100px;
+	margin-right:10px;
+	text-align: center;
+	cursor:pointer;
+	color: white;
+	padding:10px;
+}
+.design-setting-header>ul>li.active{
+	background-color: black;
+}
+.design-setting-body{
+	margin-left:-100px;
+	margin-right:20px;
+	max-height: 688px;
+	overflow-y:auto;
+	overflow-x : hidden;
+}
+.design-setting-left,.design-setting-right{
+	display: none;
+}
+.design-setting-active{display:block;}
+
+/* 右侧设置样式 */
+.design-setting-view{
+	padding:10px;
+}
+/*校验没有通过*/
+.design-setting-warn{}
+/*提示*/
+.design-setting-warn .design-setting-tip{
+	color:#ff4500 !important;;
+}
+.design-setting-warn .title-ipt{
+	border-color:#ff4500 !important;
+}
+.design-setting-warn .placeholder-ipt{
+	border-color:#ff4500 !important;
+}
+.design-setting-warn .actionname-ipt{
+	border-color:#ff4500 !important;
+}
+
+.design-setting-view-head,.design-setting-title{
+	font-size:12px;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	color:white;
+	height:30px;
+	line-height: 30px;
+}
+.design-setting-tip{
+	font-size:10px;
+	font-weight: normal;
+	padding:0px 10px;
+	height:30px;
+	line-height: 30px;
+	color:#f4f4f4;
+	font-family: "微软雅黑";
+}
+.design-setting-view-ipt{
+	padding:10px 0px;
+	color : white;
+	font-size:12px;
+	vertical-align: middle;
+}
+.design-setting-view-opt{
+	padding:2px 0px;
+	color : white;
+	font-size:12px;
+	vertical-align: middle;
+}
+.ipt[type="checkbox"],.ipt[type="radio"]{
+	vertical-align: middle;
+	margin-right:5px;
+	margin-left:2px;
+}
+.ipt:focus{
+	border:1px solid rgb(63,154,249);
+	border-radius:2px;
+}
+.title-ipt,.title2-ipt,.placeholder-ipt,.actionname-ipt{
+	background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: #fff;
+    padding: 6px 10px;
+    width: 310px;
+    border-radius: 2px;
+    outline: none;
+    font-size: 12px;
+    border-radius:2px;
+}
+.options-ipt{
+	background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: #fff;
+    padding: 6px 10px;
+    width: 310px;
+    border-radius: 2px;
+    outline: none;
+    font-size: 12px;
+    width:200px;
+    border-radius:2px;
+}
+.description-ipt{
+	min-height: 7.5em;
+	background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: #fff;
+    padding: 6px 10px;
+    width: 310px;
+    border-radius: 2px;
+    outline: none;
+    font-size: 12px;
+    width:310px;
+    border-radius:2px;
+}
+.numberfield-detail{
+	color: #858e99;
+	padding-right:10px;
+    font-size: 14px;
+    text-align: right;
+    line-height: 20px;
+    margin: 0px;
+    background-color:#F0EFF4;
+}
+
+.design-component-move{
+	opacity: .7;
+}
+.design-component-move .component-item-view{
+	background-color:#666;
+	opacity: .5;
+}
+.design-setting-ipt{
+}
+.design-setting-ipt>ul{
+	margin:0px;
+	padding:0px;
+	list-style-type: none;
+	display: inline-block;
+	margin-bottom:15px;
+}
+.design-setting-ipt>ul>li{
+	float:left;
+	height:50px;
+	width:50px;
+	position: relative;
+	margin-right:10px;
+	margin-top:10px;
+}
+.icon-active{
+	border:1px solid red;
+	position: absolute;
+	background-image: url(images/icon-active.png);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	right:-2px;
+	bottom:-3px;
+	display:none;
+	width:55px;
+	text-align: right;
+	padding-top:53px;
+	border:1px solid #3F9AF9;
+	border-radius: 5px;
+}
+.setting-icon{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	display:block;
+	cursor:pointer;
+}
+.setting-icon-1{
+	background-image: url(images/icon1.png);
+}
+.setting-icon-2{
+	background-image: url(images/icon2.png);
+}
+.setting-icon-3{
+	background-image: url(images/icon3.png);
+}
+.setting-icon-4{
+	background-image: url(images/icon4.png);
+}
+.setting-icon-5{
+	background-image: url(images/icon5.png);
+}
+.setting-icon-6{
+	background-image: url(images/icon6.png);
+}
+.setting-icon-7{
+	background-image: url(images/icon7.png);
+}
+.setting-icon-8{
+	background-image: url(images/icon8.png);
+}
+.setting-icon-9{
+	background-image: url(images/icon9.png);
+}
+.setting-icon-10{
+	background-image: url(images/icon10.png);
+}
+.setting-icon-11{
+	background-image: url(images/icon11.png);
+}
+.setting-icon-12{
+	background-image: url(images/icon12.png);
+}
+.setting-icon-13{
+	background-image: url(images/icon13.png);
+}
+.setting-icon-14{
+	background-image: url(images/icon14.png);
+}
+.setting-icon-15{
+	background-image: url(images/icon15.png);
+}
+.setting-icon-16{
+	background-image: url(images/icon16.png);
+}
